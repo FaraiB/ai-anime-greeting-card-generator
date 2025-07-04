@@ -1,15 +1,15 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { Occasion } from '../types';
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable is not set.");
+if (!import.meta.env.VITE_API_KEY) {
+    throw new Error("VITE_API_KEY environment variable is not set in your .env.local file.");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 const generateImage = async (occasion: Occasion): Promise<string> => {
     // --- Mock Image Mode for Development ---
-    if (process.env.USE_MOCK_IMAGES === 'true') {
+    if (import.meta.env.VITE_USE_MOCK_IMAGES === 'true') {
         console.warn("--- MOCK IMAGE MODE: Returning placeholder image. ---");
         const placeholderText = `${occasion.name.replace("'", "")} Card\\n(Mock Image)`;
         return `https://placehold.co/600x800/E879F9/FFFFFF/png?text=${encodeURIComponent(placeholderText)}&font=pacifico`;

@@ -8,13 +8,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    // Define global constants which can be replaced at build time.
-    define: {
-      // This ensures that `process.env.API_KEY` in your application code
-      // is replaced with the value of VITE_API_KEY from your .env file.
-      'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY),
-      'process.env.USE_MOCK_IMAGES': JSON.stringify(env.VITE_USE_MOCK_IMAGES),
-    },
     build: {
       outDir: 'dist',
     },

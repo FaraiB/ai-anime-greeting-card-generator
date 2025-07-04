@@ -4,11 +4,13 @@ import OccasionSelector from "./components/OccasionSelector";
 import CardDisplay from "./components/CardDisplay";
 import Footer from "./components/Footer";
 import { geminiService } from "./services/geminiService";
-import { CardData, Occasion } from "./types";
+import { CardData } from "./types";
 import { OCCASIONS } from "./constants";
 
 // Diagnostic log to help debug environment variable loading
-console.log(`[Debug] Mock Images Mode: "${process.env.USE_MOCK_IMAGES}"`);
+console.log(
+  `[Debug] Mock Images Mode: "${import.meta.env.VITE_USE_MOCK_IMAGES}"`
+);
 
 const LoadingSpinner: React.FC = () => (
   <div className="flex flex-col items-center justify-center h-96 text-pink-500">
@@ -60,7 +62,7 @@ const ErrorDisplay: React.FC<{ message: string }> = ({ message }) => (
 );
 
 const MockModeBanner: React.FC = () => {
-  if (process.env.USE_MOCK_IMAGES !== "true") return null;
+  if (import.meta.env.VITE_USE_MOCK_IMAGES !== "true") return null;
 
   return (
     <div className="bg-yellow-200 border-l-4 border-yellow-500 text-yellow-700 p-4 text-center font-semibold mb-6 rounded-md shadow">
