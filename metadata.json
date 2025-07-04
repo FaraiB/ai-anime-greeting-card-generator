@@ -1,0 +1,5 @@
+{
+  "name": "AI Anime Greeting Card Generator",
+  "description": "Create unique, cute, and heartfelt anime-style greeting cards for any occasion. This app uses Gemini to generate both a custom message and a beautiful image, which are then combined into a shareable digital card.",
+  "requestFramePermissions": []
+}

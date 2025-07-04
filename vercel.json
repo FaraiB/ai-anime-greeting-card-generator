@@ -1,0 +1,7 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "env": {
+    "VITE_API_KEY": "@gemini-api-key"
+  }
+}
