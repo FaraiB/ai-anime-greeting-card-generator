@@ -1,3 +1,4 @@
+
 # AI Anime Greeting Card Generator
 
 ![Greeting Card App Screenshot](https://placehold.co/800x450/E879F9/FFFFFF/png?text=AI+Anime+Greeting+Card+Generator&font=poppins)
@@ -41,14 +42,12 @@ Follow these instructions to get the project running on your local machine.
 ### Installation & Setup
 
 1.  **Clone the repository:**
-
     ```bash
     git clone https://github.com/your-username/ai-anime-greeting-card-generator.git
     cd ai-anime-greeting-card-generator
     ```
 
 2.  **Install dependencies:**
-
     ```bash
     npm install
     ```
@@ -61,12 +60,12 @@ Follow these instructions to get the project running on your local machine.
     ```
 
     Open `.env.local` and add your Google Gemini API key:
-
     ```
     VITE_API_KEY="YOUR_GEMINI_API_KEY_HERE"
     ```
 
     **Important:** The Imagen 3 model requires your Google Cloud project to have a billing account enabled. See the section below on "Mock Image Mode" for a development workaround.
+
 
 4.  **Run the development server:**
     ```bash
@@ -81,14 +80,12 @@ Follow these instructions to get the project running on your local machine.
 To avoid API costs during development or if your account is not yet enabled for Imagen, you can use the built-in mock mode. This will replace the Imagen API call with a placeholder image.
 
 To enable it, add the following line to your `.env.local` file:
-
 ```
 # .env.local
 
 VITE_API_KEY="YOUR_GEMINI_API_KEY_HERE"
 VITE_USE_MOCK_IMAGES=true
 ```
-
 A banner will appear at the top of the app to remind you that mock mode is active.
 
 ---
